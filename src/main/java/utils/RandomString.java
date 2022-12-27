@@ -15,7 +15,9 @@ public class RandomString {
     }
 
 
-    //сделать метод для генерации email
+    public static String getRandomEmail() {
+        String emailDomain = "@yandex.ru";
+        return getRandomString(10) + emailDomain;
+    }
 
-    //сделать спеки!???
 }

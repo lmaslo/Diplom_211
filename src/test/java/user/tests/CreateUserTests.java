@@ -12,11 +12,10 @@ public class CreateUserTests {
     UserGeneration generation = new UserGeneration();
 
 
-
     @Test
     @DisplayName("Создание пользователя - позитивный тест")
-    @Description("1")
-    //посмотреть про удаление пользователя после теста
+    @Description("Создание пользователя с рандомными параметрами")
+
     public void createUserTests() {
         User user = generation.newUser();
 
@@ -24,7 +23,10 @@ public class CreateUserTests {
                 .log().all()
                 .statusCode(200);
 
+
         // добавить проверку боди
+        //посмотреть про удаление пользователя после теста
+        //step.deleteUser();
     }
 
 
