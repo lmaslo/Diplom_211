@@ -3,12 +3,11 @@ package user.models;
 public class User {
     private String email;
     private String password;
-    private String name;
 
-    public User(String email, String password, String name) {
+
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
-        this.name = name;
     }
 
     public String getEmail() {
@@ -27,11 +26,10 @@ public class User {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+
+    public String getIncorrectPassword() {
+        return password+"1";
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 }
