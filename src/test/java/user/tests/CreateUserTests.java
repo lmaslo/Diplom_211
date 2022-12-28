@@ -33,7 +33,7 @@ public class CreateUserTests {
 
     @Test
     @DisplayName("Создание пользователя - позитивный тест")
-    @Description("Создание пользователя с рандомными параметрами")
+    @Description("Создание пользователя с рандомными параметрами, проверяется статус код и ответ")
     public void createUserTests() {
         UserCreate user = generation.newUser();
 
@@ -53,7 +53,7 @@ public class CreateUserTests {
 
     @Test
     @DisplayName("Создание пользователя дубликат")
-    @Description("Создание пользователя, с email, который уже есть в системе")
+    @Description("Создание пользователя, с email, который уже есть в системе, проверяется статус код и ответ")
     public void createDuplicateUserTests() {
         UserCreate user = generation.newUser();
 
@@ -70,7 +70,7 @@ public class CreateUserTests {
 
     @Test
     @DisplayName("Создание пользователя без Login")
-    @Description("Создание пользователя без обязательного поля Login")
+    @Description("Создание пользователя без обязательного поля Login, проверяется статус код и ответ")
     public void createUserWithoutLoginTests() {
         UserCreate user = generation.newUser();
         user.setEmail(null);
@@ -84,7 +84,7 @@ public class CreateUserTests {
 
     @Test
     @DisplayName("Создание пользователя без password")
-    @Description("Создание пользователя без обязательного поля password")
+    @Description("Создание пользователя без обязательного поля password, проверяется статус код и ответ")
     public void createUserWithoutPasswordTests() {
         UserCreate user = generation.newUser();
         user.setPassword(null);
@@ -100,7 +100,7 @@ public class CreateUserTests {
 
     @Test
     @DisplayName("Создание пользователя без name")
-    @Description("Создание пользователя без обязательного поля name")
+    @Description("Создание пользователя без обязательного поля name, проверяется статус код и ответ")
     public void createUserWithoutNameTests() {
         UserCreate user = generation.newUser();
         user.setName(null);

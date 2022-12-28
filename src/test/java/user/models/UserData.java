@@ -1,10 +1,10 @@
 package user.models;
 
-public class UserDataResponse {
+public class UserData {
     private String email;
     private String name;
 
-    public UserDataResponse(String email, String name) {
+    public UserData(String email, String name) {
         this.email = email;
         this.name = name;
     }

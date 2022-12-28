@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import user.models.User;
 import user.models.UserCreate;
+import user.models.UserData;
 
 import static io.restassured.RestAssured.given;
 import static specs.Specs.request;
@@ -40,6 +41,17 @@ public class UserSteps {
                 .header("Authorization", accessToken)
                 .when()
                 .delete(ROOT+"/user")
+                .then();
+    }
+
+    @Step("Edit user name")
+    public ValidatableResponse editUser(String accessToken, UserData user) {
+        return given()
+                .spec(request)
+                .header("Authorization", accessToken)
+                .body(user)
+                .when()
+                .patch(ROOT+"/user")
                 .then();
     }
 

@@ -30,7 +30,7 @@ public class LoginUserTests {
 
     @Test
     @DisplayName("Авторизация пользователя - позитивный тест")
-    @Description("Авторизация пользователя")
+    @Description("Авторизация пользователя, проверяется статус код и ответ")
     public void loginUserTests() {
         UserCreate userCreate = generation.newUser();
         User user = new User(userCreate.getEmail(), userCreate.getPassword());
@@ -55,7 +55,7 @@ public class LoginUserTests {
 
     @Test
     @DisplayName("Авторизация пользователя - негативный тест")
-    @Description("Авторизация пользователя с рандомными login и password")
+    @Description("Авторизация пользователя с рандомными login и password, проверяется статус код и ответ")
     public void loginUserRandomParamsTests() {
         User user = generation.newAuthUser();
 
@@ -68,7 +68,7 @@ public class LoginUserTests {
 
     @Test
     @DisplayName("Авторизация пользователя - некорректный пароль")
-    @Description("Авторизация пользователя с некорректным паролем")
+    @Description("Авторизация пользователя с некорректным паролем, проверяется статус код и ответ")
     public void loginUserIncorrectPasswordTests() {
         UserCreate userCreate = generation.newUser();
         User user = new User(userCreate.getEmail(), userCreate.getIncorrectPassword());

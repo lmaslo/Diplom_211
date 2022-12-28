@@ -4,9 +4,9 @@ public class UserCreateResponse {
     private Boolean success;
     private String accessToken;
     private String refreshToken;
-    private UserDataResponse user;
+    private UserData user;
 
-    public UserCreateResponse(Boolean success, String accessToken, String refreshToken, UserDataResponse user) {
+    public UserCreateResponse(Boolean success, String accessToken, String refreshToken, UserData user) {
         this.success = success;
         this.accessToken = accessToken;
         this.refreshToken = refreshToken;
@@ -37,11 +37,11 @@ public class UserCreateResponse {
         this.refreshToken = refreshToken;
     }
 
-    public UserDataResponse getUser() {
+    public UserData getUser() {
         return user;
     }
 
-    public void setUser(UserDataResponse user) {
+    public void setUser(UserData user) {
         this.user = user;
     }
 }
