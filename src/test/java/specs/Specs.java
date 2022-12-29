@@ -9,7 +9,6 @@ public class Specs {
 
     public static final String BASE_URI = "https://stellarburgers.nomoreparties.site";
 
-
     public static RequestSpecification request = with()
             .contentType(ContentType.JSON)
             .baseUri(BASE_URI);

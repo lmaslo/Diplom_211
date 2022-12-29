@@ -3,13 +3,13 @@ package order.tests;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import order.steps.OrderSteps;
+import org.junit.After;
 import org.junit.Test;
 import user.models.UserCreate;
 import user.models.UserCreateResponse;
 import user.models.UserGeneration;
 import user.steps.UserSteps;
 
-import static org.apache.http.HttpStatus.SC_FORBIDDEN;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
@@ -20,6 +20,13 @@ public class GetOrderTests {
     UserSteps stepUser = new UserSteps();
     UserGeneration generation = new UserGeneration();
     private String accessToken;
+
+    @After
+    public void deleteUser() {
+        if (accessToken != null) {
+            stepUser.deleteUser(accessToken);
+        }
+    }
 
     @Test
     @DisplayName("Получение заказов - позитивный тест, без авторизации")
@@ -47,5 +54,6 @@ public class GetOrderTests {
                 .statusCode(SC_OK)
                 .body("success", equalTo(true));
     }
+
 
 }

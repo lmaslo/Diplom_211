@@ -1,5 +1,8 @@
 package user.models;
 
+
+import static utils.RandomString.getRandomString;
+
 public class User {
     private String email;
     private String password;
@@ -28,7 +31,7 @@ public class User {
 
 
     public String getIncorrectPassword() {
-        return password+"1";
+        return password + getRandomString(1);
     }
 
 
