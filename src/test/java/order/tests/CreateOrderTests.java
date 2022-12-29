@@ -10,4 +10,5 @@ package order.tests;
 без ингредиентов,
 с неверным хешем ингредиентов.*/
 public class CreateOrderTests {
+
 }
